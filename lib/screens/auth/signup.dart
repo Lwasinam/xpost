@@ -13,6 +13,7 @@ class _SignupState extends State<Signup> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Colors.white,
         body: Stack(
           children: [
             Positioned(
@@ -28,47 +29,124 @@ class _SignupState extends State<Signup> {
             ),
             Positioned(
               top: 60,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                      height: 60,
-                      width: 80,
-                      child: Center(
-                        child: FaIcon(
-                          FontAwesomeIcons.chevronLeft,
+              child: Container(
+                width: MediaQuery.of(context).size.width,
+                child: Column(
+                  // mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                        height: 60,
+                        width: 80,
+                        child: Center(
+                          child: FaIcon(
+                            FontAwesomeIcons.chevronLeft,
+                            color: AppColors.darkBlue,
+                          ),
+                        ),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.only(
+                                topRight: Radius.circular(13.0),
+                                bottomRight: Radius.circular(13.0)),
+                            color: AppColors.lightBlue.withOpacity(0.1))),
+                    SizedBox(
+                      height: 50,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 20),
+                      child: Text(
+                        'Hello,\nWelcome back',
+                        style: TextStyle(
+                          fontSize: 38,
+                          fontWeight: FontWeight.w800,
                           color: AppColors.darkBlue,
                         ),
                       ),
+                    ),
+                    SizedBox(
+                      height: 65,
+                    ),
+                    Container(
+                      child: Center(
+                        child: Padding(
+                          padding: const EdgeInsets.only(
+                            left: 15,
+                            right: 15,
+                          ),
+                          child: TextFormField(
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.w800,
+                              color: AppColors.darkBlue,
+                            ),
+                            decoration: new InputDecoration.collapsed(
+                              hintText: 'email address',
+                              hintStyle: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.w800,
+                                color: AppColors.darkBlue,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      margin: EdgeInsets.only(left: 20, right: 20),
+                      height: 60,
+                      width: 600,
                       decoration: BoxDecoration(
-                          borderRadius: BorderRadius.only(
-                              topRight: Radius.circular(13.0),
-                              bottomRight: Radius.circular(13.0)),
-                          color: AppColors.lightBlue.withOpacity(0.1))),
-                  SizedBox(
-                    height: 50,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 30),
-                    child: Text(
-                      'Hello,\nWelcome back',
-                      style: TextStyle(
-                        fontSize: 38,
-                        fontWeight: FontWeight.w800,
-                        color: AppColors.darkBlue,
+                        color: Colors.white,
+                        boxShadow: [
+                          BoxShadow(
+                              blurRadius: 50,
+                              spreadRadius: 8,
+                              color: Colors.grey.withOpacity(0.2))
+                        ],
+                        borderRadius: BorderRadius.circular(20),
                       ),
                     ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.only(left: 10, right: 10),
-                    height: 60,
-                    width: 600,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: Colors.black),
-                  )
-                ],
+                    SizedBox(
+                      height: 25,
+                    ),
+                    Container(
+                      child: Center(
+                        child: Padding(
+                          padding: const EdgeInsets.only(
+                            left: 15,
+                            right: 15,
+                          ),
+                          child: TextFormField(
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.w800,
+                              color: AppColors.darkBlue,
+                            ),
+                            decoration: new InputDecoration.collapsed(
+                              hintText: 'password',
+                              hintStyle: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.w800,
+                                color: AppColors.darkBlue,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      margin: EdgeInsets.only(left: 20, right: 20),
+                      height: 60,
+                      width: 600,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        boxShadow: [
+                          BoxShadow(
+                              blurRadius: 50,
+                              spreadRadius: 8,
+                              color: Colors.grey.withOpacity(0.2))
+                        ],
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                    )
+                  ],
+                ),
               ),
             ),
           ],
